@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/showForm")
@@ -42,4 +43,19 @@ public class HelloWorldController {
 
         return "helloworld";
     }
+
+    @PostMapping("/processFormV3")
+    public String processFormV3(@RequestParam("studentName") String name, Model model) {
+
+        // convert message to all caps and concap message
+        name = name.toUpperCase();
+
+        String result = "STOP SHOUTING AGAIN " + name + "!";
+
+        // add message to model
+        model.addAttribute("message", result);
+
+        return "helloworld";
+    }
+
 }
