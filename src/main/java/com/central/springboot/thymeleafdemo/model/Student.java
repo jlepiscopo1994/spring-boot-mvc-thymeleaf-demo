@@ -1,5 +1,7 @@
 package com.central.springboot.thymeleafdemo.model;
 
+import java.util.List;
+
 public class Student {
 
     private String firstName;
@@ -10,6 +12,19 @@ public class Student {
 
     private String favoriteLanguage;
 
+    private List<String> favoriteSystems;
+
+    public Student() {}
+
+
+    public List<String> getFavoriteSystems() {
+        return favoriteSystems;
+    }
+
+    public void setFavoriteSystems(List<String> favoriteSystems) {
+        this.favoriteSystems = favoriteSystems;
+    }
+
     public String getFavoriteLanguage() {
         return favoriteLanguage;
     }
@@ -17,8 +32,6 @@ public class Student {
     public void setFavoriteLanguage(String favoriteLanguage) {
         this.favoriteLanguage = favoriteLanguage;
     }
-
-    public Student() {}
 
     public String getFirstName() {
         return firstName;
